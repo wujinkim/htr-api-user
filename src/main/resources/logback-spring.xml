@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <!--로그 파일 저장 위치-->
+    <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <Pattern>[%d{yyyy-MM-dd HH:mm:ss}:%-3relative][%thread] %-5level %logger{35} - %msg%n</Pattern>
+        </layout>
+    </appender>
+    
+    <logger name="kr.or.kotc.mapper" level="DEBUG" appender-ref="STDOUT" />
+	<logger name="jdbc.sqlonly" level="DEBUG" appender-ref="STDOUT" />
+	<logger name="jdbc.connection" level="OFF"/>
+	<logger name="jdbc.audit" level="OFF"/>
+	<logger name="jdbc.resultset" level="OFF"/>
+	<logger name="jdbc.resultsettable" level="OFF"/>
+    
+    <root level="DEBUG">
+    	<appender-ref ref="STDOUT" />
+    </root>
+</configuration>
